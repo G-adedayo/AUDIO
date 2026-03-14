@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUDIO - HomePage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HAMBURGER MENU -->
+    <div id="menuIcon" class="menu-icon">☰</div>
+
+    <!-- SIDE MENU -->
+    <div id="sideMenu" class="side-menu hidden">
+        <a href="../HomePage/index.html">🏠 Home</a>
+        <a href="../HistoryPage/index.html">📜 History</a>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+
+        <h1 class="title">Live Transcription</h1>
+
+        <!-- TOP CONTROLS -->
+        <div class="controls">
+
+            <!-- LANGUAGE SELECTOR -->
+            <div class="control-group">
+                <label for="languageSelect">Translate to:</label>
+                <select id="languageSelect">
+                    <option value="none">No Translation</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="ar">Arabic</option>
+                    <option value="zh">Chinese</option>
+                    <option value="hi">Hindi</option>
+                    <option value="pt">Portuguese</option>
+                </select>
+            </div>
+
+            <!-- LIVE TRANSLATION TOGGLE -->
+            <div class="control-group toggle-group">
+                <label class="switch">
+                    <input type="checkbox" id="translationToggle">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label">Live Translation</span>
+            </div>
+
+            <!-- RECORD BUTTON -->
+            <button id="recordBtn" class="record-btn">🎤 Start Recording</button>
+
+        </div>
+
+        <!-- TEXT AREAS (RESPONSIVE LAYOUT) -->
+        <div class="text-columns">
+
+            <!-- ENGLISH COLUMN -->
+            <div class="text-box">
+                <h2>English</h2>
+                <textarea id="englishText" readonly></textarea>
+            </div>
+
+            <!-- TRANSLATED COLUMN -->
+            <div class="text-box">
+                <h2>Translated</h2>
+                <textarea id="translatedText" readonly></textarea>
+            </div>
+
+        </div>
+
+        <!-- CLEAR BUTTON BELOW TEXT BOXES -->
+        <button id="clearBtn" class="clear-btn">Clear</button>
+
+        <!-- SAVE BUTTON -->
+        <button id="saveBtn" class="save-btn">Save Transcript</button>
+
+    </div>
+
+    <!-- NAME POPUP -->
+    <div id="namePopup" class="popup hidden">
+        <div class="popup-content">
+            <h3>Name Transcript</h3>
+            <input id="nameInput" type="text" placeholder="Enter name...">
+            <div class="popup-buttons">
+                <button id="confirmNameBtn">Save</button>
+                <button id="cancelNameBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- FIREBASE SCRIPTS -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- FIREBASE CONFIG -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDKdJ6CsqOvtLUkg_7zr2LWAwM4XprQZ74",
+            authDomain: "audio-8c5cb.firebaseapp.com",
+            projectId: "audio-8c5cb",
+            storageBucket: "audio-8c5cb.firebasestorage.app",
+            messagingSenderId: "146695983243",
+            appId: "1:146695983243:web:feb3508729d163c274c48e",
+            measurementId: "G-CLZ78ZCDTP"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- MAIN JS -->
+    <script src="app.js"></script>
+
+</body>
+</html>

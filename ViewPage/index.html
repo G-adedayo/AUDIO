@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUDIO - View more</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HAMBURGER MENU ICON -->
+    <div id="menuIcon" class="menu-icon">☰</div>
+
+    <!-- SLIDE-OUT MENU -->
+    <div id="sideMenu" class="side-menu hidden">
+        <a href="../HomePage/index.html">🏠 Home</a>
+        <a href="../HistoryPage/index.html">📜 History</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="view-container">
+        <h1 id="transcriptName" class="editable-name" contenteditable="true">Loading...</h1>
+        <p id="timestamp" class="timestamp">Loading...</p>
+
+        <textarea id="fullText" readonly></textarea>
+
+        <button id="translateBtn" class="translate-btn">🌍 Translate</button>
+        <button id="deleteBtn" class="delete-btn">🗑️ Delete</button>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- DELETE POPUP -->
+    <div id="deletePopup" class="popup hidden">
+        <div class="popup-content">
+            <h3>Delete this transcript?</h3>
+            <p>This action cannot be undone.</p>
+
+            <div class="popup-buttons">
+                <button id="confirmDeleteBtn" class="danger">Delete</button>
+                <button id="cancelDeleteBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRANSLATE POPUP -->
+    <div id="translatePopup" class="popup hidden">
+        <div class="popup-content">
+            <h3>Translate to:</h3>
+
+            <select id="languageSelect">
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="ar">Arabic</option>
+                <option value="zh">Chinese</option>
+                <option value="hi">Hindi</option>
+                <option value="pt">Portuguese</option>
+            </select>
+
+            <div class="popup-buttons">
+                <button id="confirmTranslateBtn">Translate</button>
+                <button id="cancelTranslateBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- Firebase config -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDKdJ6CsqOvtLUkg_7zr2LWAwM4XprQZ74",
+            authDomain: "audio-8c5cb.firebaseapp.com",
+            projectId: "audio-8c5cb",
+            storageBucket: "audio-8c5cb.firebasestorage.app",
+            messagingSenderId: "146695983243",
+            appId: "1:146695983243:web:feb3508729d163c274c48e",
+            measurementId: "G-CLZ78ZCDTP"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
